@@ -1,5 +1,4 @@
 import Login from './Login';
-import Link from 'next/link';
 import router from 'next/router';
 
 function Home() {
