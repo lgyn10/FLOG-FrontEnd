@@ -1,7 +1,11 @@
-export default function Home() {
+import Link from 'next/link';
+import router from 'next/router';
+
+function Home() {
   return (
     <>
-      <h1>테스트 하이</h1>
+      <button onClick={() => router.push('./register')}>테스트 하이</button>
     </>
   );
 }
+export default Home;
