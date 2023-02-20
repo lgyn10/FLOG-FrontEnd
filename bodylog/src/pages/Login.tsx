@@ -136,10 +136,8 @@ const StyledLoginBtn = styled.button`
   }
 `;
 
-
 const StyledButton = styled.button`
   all: unset;
   text-align: right;
   color: green;
-
 `;

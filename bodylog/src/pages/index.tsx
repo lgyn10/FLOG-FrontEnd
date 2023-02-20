@@ -1,6 +1,5 @@
-import Login from './Login';
+import Login from 'src/pages/Login';
 import router from 'next/router';
-
 
 function Home() {
   return (
