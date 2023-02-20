@@ -48,6 +48,7 @@ function Login() {
           </StyledLoginBox>
 
           {/* 회원가입 페이지 이동 */}
+
           <StyledButton onClick={() => router.push('./register')}>
             <p>회원가입</p>
           </StyledButton>
@@ -122,19 +123,23 @@ const StyledLoginBtn = styled.button`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
   &:hover {
     background-position: right center;
     /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
   }
+
   &:active {
     transform: scale(0.95);
   }
 `;
 
+
 const StyledButton = styled.button`
   all: unset;
   text-align: right;
   color: green;
+
 `;

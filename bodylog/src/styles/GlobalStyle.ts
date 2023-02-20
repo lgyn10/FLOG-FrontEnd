@@ -1,4 +1,4 @@
-// Gloval style 지정
+// Global style 지정
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   padding:0;
   box-sizing: border-box;
   background-color: #DBEDC1
+
 
 }
 `;
