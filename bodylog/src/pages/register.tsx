@@ -3,6 +3,7 @@
 import router from 'next/router';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 function Register() {
   const [registerId, setRegisterId] = useState(''); // 회원가입용(이하 Rgis) 아이디 상태
@@ -25,8 +26,22 @@ function Register() {
     setRegisterPwCheck(e.target.value);
   };
 
+  // 회원가입 요청 로직
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const register = async () => {
+      const response = await axios
+        .post('/MockRegister', {
+          id: registerId,
+          password: registerPw,
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
     if (registerId == '') {
       setErrMessage('아이디를 입력하세요');
     } else if (registerPw == '') {
@@ -34,7 +49,7 @@ function Register() {
     } else if (registerPw != registerPwCheck) {
       setErrMessage('두 개의 비밀번호가 같지 않습니다');
     } else {
-      router.push('./');
+      register();
     }
   };
 

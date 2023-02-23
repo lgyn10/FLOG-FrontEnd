@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import axios from 'axios';
+import swal from 'sweetalert';
 
 function Login() {
   const router = useRouter();
 
-  const onMain = () => {
-    router.push({
-      pathname: '/mypage',
-    });
-  };
+  // onSubmit과 기능 겹침
+  // const onMain = () => {
+  //   router.push({
+  //     pathname: '/mypage',
+  //   });
+  // };
 
   const [id, setId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -21,11 +24,30 @@ function Login() {
   const onChangePw = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
-
+  // 로그인 버튼 로직
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const login = async () => {
+      const response = await axios
+        .post('/MockApi/Login', {
+          id: id,
+          password: password,
+        })
+        .then((response) => {
+          localStorage.setItem('logintoken', response.data.accessToken);
+        });
+    };
+    // 로그인 버튼을 누르면
+    login()
+      // 로그인 성공 시 mypage로 이동
+      .then(() => {
+        router.push('/mypage');
+      })
+      // 서버에 없는 로그인 정보로 인해 에러가 발생하면 alert!
+      .catch(() => {
+        swal('Please check your imformation!');
+      });
   };
-
   return (
     <>
       <StyledContainer>
@@ -39,15 +61,12 @@ function Login() {
                   <StyledInput type='password' placeholder='비밀번호' onChange={onChangePw} minLength={8} required />
                 </StyledInputWrapper>
                 {/* 메인페이지 이동*/}
-                <StyledLoginBtn type='submit' onClick={onMain}>
-                  Login
-                </StyledLoginBtn>
+                <StyledLoginBtn type='submit'>Login</StyledLoginBtn>
               </StyledCover>
             </form>
           </StyledLoginBox>
 
           {/* 회원가입 페이지 이동 */}
-
           <StyledButton onClick={() => router.push('./register')}>
             <p>회원가입</p>
           </StyledButton>
