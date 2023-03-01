@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 function Home() {
+
   const router = useRouter();
 
   const onProlog = () => {
@@ -11,7 +12,6 @@ function Home() {
       pathname: '/Prolog1',
     });
   };
-
   return (
     <StyledIndexBox>
       <ImageBox>
@@ -19,6 +19,7 @@ function Home() {
         <br></br>
         <StyledText>FLOG</StyledText>
       </ImageBox>
+
       <StyledP onClick={onProlog}>Hi</StyledP>
     </StyledIndexBox>
   );
@@ -56,3 +57,4 @@ const StyledP = styled.p`
   margin-bottom: 2rem;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
 `;
+
