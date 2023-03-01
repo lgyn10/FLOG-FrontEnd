@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { useState } from 'react';
 import styled from 'styled-components';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 interface CProps {
   currentMonth: any;
@@ -38,6 +39,17 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           text: cloneDay,
           confirmButtonColor: '#168657',
         });
+        const dayPost = async () => {
+          const response = await axios
+            .post('/api/meals', {
+              type: 'HEALTH',
+              quantity: 'LIGHT',
+            })
+            .then(() => {
+              console.log();
+            });
+        };
+        dayPost();
         //setOnClickDate(cloneDay); //! 첫 클릭시 undefined 두번째 클릭 시 이전 클릭 날짜가 나옴
       };
       days.push(

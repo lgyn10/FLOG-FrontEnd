@@ -1,12 +1,12 @@
 import Calendar from '@/components/Calendar';
 import Modal from '@/components/Modal';
 import router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 function mypage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isLogin, setIsLogin] = useState('');
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -14,6 +14,17 @@ function mypage() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  useEffect(() => {
+    const isLoginLogic = () => {
+      if (localStorage.getItem('logintoken') != null) {
+        setIsLogin('로그인 O');
+      } else {
+        setIsLogin('로그인 X');
+      }
+    };
+    isLoginLogic();
+  }, []);
+
   return (
     <>
       <MyPageBox>
@@ -34,13 +45,14 @@ function mypage() {
         >
           LINK TO MYPAGE
         </StyledMypageButton>
+        <IsLoginBox>현재 로그인 여부: {isLogin}</IsLoginBox>
       </MyPageBox>
     </>
   );
 }
 
 export default mypage;
-
+const IsLoginBox = styled.div``;
 const MyPageBox = styled.div`
   padding: 1rem;
   border: 1px solid red;

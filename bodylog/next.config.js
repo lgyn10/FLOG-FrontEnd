@@ -16,6 +16,10 @@ const nextConfig = {
         source: '/api/login',
         destination: `http://bodylog1.duckdns.org/login`,
       },
+      {
+        source: '/api/meals',
+        destination: `http://bodylog1.duckdns.org/meals`,
+      },
     ];
   },
 };
