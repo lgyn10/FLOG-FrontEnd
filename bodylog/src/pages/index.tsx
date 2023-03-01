@@ -3,8 +3,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-function Home() {
-
+function Index() {
   const router = useRouter();
 
   const onProlog = () => {
@@ -25,7 +24,7 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;
 
 const StyledIndexBox = styled.div`
   display: flex;
@@ -57,4 +56,3 @@ const StyledP = styled.p`
   margin-bottom: 2rem;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
 `;
-
