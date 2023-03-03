@@ -5,36 +5,36 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-function Register() {
-  const [registerId, setRegisterId] = useState(''); // 회원가입용(이하 Rgis) 아이디 상태
-  const [registerPw, setRegisterPw] = useState(''); // Rgis 비밀번호 상태
-  const [registerPwCheck, setRegisterPwCheck] = useState(''); // Rgis 비밀번호 확인 상태
+function Join() {
+  const [joinId, setJoinId] = useState(''); // 회원가입용(이하 Rgis) 아이디 상태
+  const [joinPw, setJoinPw] = useState(''); // Rgis 비밀번호 상태
+  const [joinPwRepeated, setJoinRepeated] = useState(''); // Rgis 비밀번호 확인 상태
   const [errMessage, setErrMessage] = useState(''); // 에러 메세지 상태
 
   // Rgis 아이디 input 상태 변화 핸들
   const handleRegisterId = (e: ChangeEvent<HTMLInputElement>) => {
-    setRegisterId(e.target.value);
+    setJoinId(e.target.value);
   };
 
   // Rgis 비밀번호 input 상태 변화 핸들
   const handleRegisterPw = (e: ChangeEvent<HTMLInputElement>) => {
-    setRegisterPw(e.target.value);
+    setJoinPw(e.target.value);
   };
 
   // Rgis 비밀번호 확인 input 상태 변화 핸들
   const handleRegisterPwCheck = (e: ChangeEvent<HTMLInputElement>) => {
-    setRegisterPwCheck(e.target.value);
+    setJoinRepeated(e.target.value);
   };
 
   // 회원가입 요청 로직
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const register = async () => {
+    const Join = async () => {
       const response = await axios
         .post('/api/join', {
-          userId: registerId,
-          userPassword: registerPw,
-          repeatedPassword: registerPwCheck,
+          userId: joinId,
+          userPassword: joinPw,
+          repeatedPassword: joinPwRepeated,
         })
         .then((response) => {
           console.log(response.data); // Join success
@@ -46,14 +46,14 @@ function Register() {
           alert('Faild creating accout(이미 해당 아이디로 계정 존재함)');
         });
     };
-    if (registerId == '') {
+    if (joinId == '') {
       setErrMessage('아이디를 입력하세요');
-    } else if (registerPw == '') {
+    } else if (joinPw == '') {
       setErrMessage('비밀번호를 입력하세요');
-    } else if (registerPw != registerPwCheck) {
+    } else if (joinPw != joinPwRepeated) {
       setErrMessage('두 개의 비밀번호가 같지 않습니다');
     } else {
-      register();
+      Join();
     }
   };
 
@@ -63,11 +63,11 @@ function Register() {
       <SttledRgis>Create Accout</SttledRgis>
       <StyledRegisterBox onSubmit={onSubmit}>
         <StyledInputText>ID</StyledInputText>
-        <StyledInput value={registerId} onChange={handleRegisterId} placeholder='아이디를 입력하세요' minLength={6} maxLength={20} />
+        <StyledInput value={joinId} onChange={handleRegisterId} placeholder='아이디를 입력하세요' minLength={6} maxLength={20} />
         <StyledInputText>PASSWORD</StyledInputText>
-        <StyledInput value={registerPw} onChange={handleRegisterPw} placeholder='비밀번호를 입력하세요' type='password' minLength={8} maxLength={20} />
+        <StyledInput value={joinPw} onChange={handleRegisterPw} placeholder='비밀번호를 입력하세요' type='password' minLength={8} maxLength={20} />
         <StyledInputText>PASSWORD CHECK</StyledInputText>
-        <StyledInput value={registerPwCheck} onChange={handleRegisterPwCheck} placeholder='비밀번호를 다시 입력하세요' type='password' minLength={8} maxLength={20} />
+        <StyledInput value={joinPwRepeated} onChange={handleRegisterPwCheck} placeholder='비밀번호를 다시 입력하세요' type='password' minLength={8} maxLength={20} />
         <StyledErrBox>{errMessage}</StyledErrBox>
         <StyledButtonBox type='submit'>
           <StyledButtonText>Join Us</StyledButtonText>
@@ -77,7 +77,7 @@ function Register() {
   );
 }
 
-export default Register;
+export default Join;
 
 const StyledH1 = styled.h1`
   margin-top: 2rem;

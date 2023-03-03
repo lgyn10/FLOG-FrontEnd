@@ -33,19 +33,19 @@ export default Modal;
 
 const slideIn = keyframes`
   from {
-    transform: translateY(100%);
+    transform: translateZ(100%);
   }
   to {
-    transform: translateY(0%);
+    transform: translateZ(0%);
   }
 `;
 
 const slideOut = keyframes`
   from {
-    transform: translateY(0%);
+    transform: translateZ(0%);
   }
   to {
-    transform: translateY(100%);
+    transform: translateZ(100%);
   }
 `;
 

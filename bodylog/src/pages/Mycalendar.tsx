@@ -1,4 +1,4 @@
-import Calendar from '@/components/Calendar';
+import Calendar from '@/components/Calendar/Calendar';
 import Modal from '@/components/Modal';
 import Nav from '@/components/Nav';
 import UnderNav from '@/components/UnderNav';
@@ -6,7 +6,7 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-function mypage() {
+function Mycalendar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState('');
   const handleOpenModal = () => {
@@ -74,7 +74,7 @@ function mypage() {
   );
 }
 
-export default mypage;
+export default Mycalendar;
 const ImageBox = styled.div`
   background-image: src('/Flogo.png');
   padding: 2rem;

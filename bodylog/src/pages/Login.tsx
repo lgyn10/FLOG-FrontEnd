@@ -71,7 +71,7 @@ function login() {
           </StyledLoginBox>
 
           {/* 회원가입 페이지 이동 */}
-          <StyledButton onClick={() => router.push('./register')}>
+          <StyledButton onClick={() => router.push('./Join')}>
             <p>회원가입</p>
           </StyledButton>
         </StyledContent>
