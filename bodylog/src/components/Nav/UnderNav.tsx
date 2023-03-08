@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 function UnderNav() {
   const router = useRouter();
 
+  // 추후 변경 가능성 O
   const onHome = () => {
     router.push({
       pathname: '/Home',
@@ -13,13 +14,13 @@ function UnderNav() {
 
   const onMylog = () => {
     router.push({
-      pathname: '/Home',
+      pathname: '/Mylog',
     });
   };
 
   const onCalendar = () => {
     router.push({
-      pathname: '/Home',
+      pathname: '/Mycalendar',
     });
   };
 
@@ -31,52 +32,59 @@ function UnderNav() {
   };
 
   return (
-    <>
-      <StyledNav>
+    <StyledNav>
+      <UnderNavBox>
         <StyledIcon>
           <StyledImgBox>
-            <Image src={'/home.png'} alt={'Home'} width={35} height={35} onClick={onHome} />
+            <Image src={'/home.png'} alt={'Home'} width={25} height={25} onClick={onHome} />
           </StyledImgBox>
-          <StyledText>HOME</StyledText>
+          <StyledText>Home</StyledText>
         </StyledIcon>
 
         <StyledIcon>
           <StyledImgBox>
-            <Image src={'/statistic.png'} alt={'MY LOG'} width={35} height={35} onClick={onMylog} />
+            <Image src={'/statistic.png'} alt={'MY LOG'} width={25} height={25} onClick={onMylog} />
           </StyledImgBox>
-          <StyledText>LOG</StyledText>
+          <StyledText>My&nbsp;log</StyledText>
         </StyledIcon>
 
         <StyledIcon>
           <StyledImgBox>
-            <Image src={'/calendar.png'} alt={'CALENDAR'} width={35} height={35} onClick={onCalendar} />
+            <Image src={'/calendar.png'} alt={'CALENDAR'} width={25} height={25} onClick={onCalendar} />
           </StyledImgBox>
-          <StyledText>CALENDAR</StyledText>
+          <StyledText>Calendar</StyledText>
         </StyledIcon>
 
         <StyledIcon>
           <StyledImgBox>
-            <Image src={'/logout.png'} alt={'LOGOUT'} width={35} height={35} onClick={onLog} />
+            <Image src={'/logout.png'} alt={'LOGOUT'} width={25} height={25} onClick={onLog} />
           </StyledImgBox>
-          <StyledText>LOGOUT</StyledText>
+          <StyledText>Logout</StyledText>
         </StyledIcon>
-      </StyledNav>
-    </>
+      </UnderNavBox>
+    </StyledNav>
   );
 }
 
 export default UnderNav;
 
+const UnderNavBox = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 45rem;
+`;
 const StyledNav = styled.nav`
-  width: 100vw;
+  width: 100%;
+  height: 8%;
   display: flex;
   background-color: #3e7a60;
+  justify-content: space-evenly;
   position: fixed;
   bottom: 0;
 `;
 
 const StyledIcon = styled.div`
-  margin: 1rem 1.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,8 +96,9 @@ const StyledImgBox = styled.div`
 `;
 
 const StyledText = styled.div`
+  margin-top: 0.2rem;
   color: white;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 400;
 `;

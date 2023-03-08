@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import Nav from '@/components/Nav';
+import Nav from '@/components/Nav/Nav';
 import Link from 'next/link';
-import UnderNav from '@/components/UnderNav';
+import UnderNav from '@/components/Nav/UnderNav';
 
 function Home() {
   return (
     <>
       <Nav />
-      <section>
+      <StyledSection>
         <StyledArticle>
           <StyledTitle>WHAT IS FLOG?</StyledTitle>
           <StyledImgWrapper>
@@ -32,20 +32,22 @@ function Home() {
             </Link>
           </StyledImgWrapper>
         </article>
-      </section>
+      </StyledSection>
       <UnderNav />
     </>
   );
 }
 
 export default Home;
+const StyledSection = styled.section`
+  padding: 10%;
+`;
 
 const StyledArticle = styled.article`
   margin-bottom: 5rem;
 `;
 
 const StyledTitle = styled.p`
-  margin-top: 10%;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 550;

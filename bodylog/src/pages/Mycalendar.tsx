@@ -1,6 +1,6 @@
 import Calendar from '@/components/Calendar/Calendar';
-import Nav from '@/components/Nav';
-import UnderNav from '@/components/UnderNav';
+import Nav from '@/components/Nav/Nav';
+import UnderNav from '@/components/Nav/UnderNav';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
