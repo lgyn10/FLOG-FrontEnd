@@ -42,6 +42,7 @@ function Home() {
 }
 
 export default Home;
+
 const StyledSection = styled.section`
   padding: 10%;
 `;
