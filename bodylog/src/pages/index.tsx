@@ -1,9 +1,10 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { RecoilRoot } from 'recoil';
-import styled from 'styled-components';
+import router from 'next/router';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { RecoilRoot } from 'recoil';
+import React from 'react';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 function Index() {
   // 로그인 되어있을 때 자동으로 mypage로 이동
@@ -12,23 +13,28 @@ function Index() {
   //     router.push('/mypage');
   //   }
   // }, []);
-  const router = useRouter();
-
-  const onProlog = () => {
+  const linkProlog = () => {
     router.push({
       pathname: '/Prolog',
     });
   };
-  return (
-    <StyledIndexBox>
-      <ImageBox>
-        <Image src={'/Flogo-white.png'} alt={'logoimg'} width={170} height={170} />
-        <br></br>
-        <StyledText>FLOG</StyledText>
-      </ImageBox>
 
-      <StyledBtn onClick={onProlog}>Welcome&nbsp;:&#41;</StyledBtn>
-    </StyledIndexBox>
+  useEffect(() => {
+    setTimeout(linkProlog, 3000);
+  }, []);
+
+  return (
+    <>
+      <StyledIndexBox>
+        <ImageBox>
+          <Image src={'/Flogo-white.png'} alt={'logoimg'} width={170} height={170} />
+          <br></br>
+          <StyledText>FLOG</StyledText>
+        </ImageBox>
+
+        <StyledBtn>Welcome&nbsp;:&#41;</StyledBtn>
+      </StyledIndexBox>
+    </>
   );
 }
 
@@ -67,6 +73,7 @@ const StyledBtn = styled.button`
   margin-bottom: 2rem;
   border-radius: 5%;
   transition: all 0.5s ease;
+
   &:hover {
     color: white;
     border-color: white;
