@@ -1,6 +1,5 @@
 import Calendar from '@/components/Calendar/Calendar';
 import Nav from '@/components/Nav/Nav';
-
 import UnderNav from '@/components/Nav/UnderNav';
 import { useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
@@ -36,7 +35,7 @@ function Mycalendar() {
     <>
       <Nav />
       <MyPageBox>
-        <button onClick={onClick}>{globalToogle}</button>
+        <StyledButton onClick={onClick}>{globalToogle}</StyledButton>
         <Calendar />
         <IsLoginBox>현재 로그인 여부: {isLogin}</IsLoginBox>
         <UnderNav />
@@ -46,14 +45,23 @@ function Mycalendar() {
 }
 
 export default Mycalendar;
-
+const StyledButton = styled.button`
+  all: unset;
+  text-align: center;
+  border: 1px solid #efefef;
+  padding: 0.1rem;
+  margin: 0.5rem;
+  border-radius: 20px;
+  color: #4e4e4e;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+`;
 const IsLoginBox = styled.div`
   border: orange 2px solid;
 `;
 const MyPageBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 10vh;
+  padding-top: 8vh;
   height: 100%;
   width: 100%;
 `;

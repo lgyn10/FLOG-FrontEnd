@@ -12,6 +12,7 @@ type IdState = string | null;
 type MemberIdState = string | null;
 type ToogleState = string | null;
 type JsonState = Array<ObjectEx> | null;
+type LoginState = boolean | null;
 
 const { persistAtom } = recoilPersist(); // 새로고침 했을 때, 데이터 유지
 
@@ -36,5 +37,11 @@ export const toogleState = atom<ToogleState>({
 export const jsonState = atom<JsonState>({
   key: 'jsonState',
   default: [],
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const loginState = atom<LoginState>({
+  key: 'loginState',
+  default: null,
   effects_UNSTABLE: [persistAtom],
 });

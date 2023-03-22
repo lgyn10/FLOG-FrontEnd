@@ -1,12 +1,12 @@
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
-import { isSameMonth, isSameDay, addDays, parse } from 'date-fns';
+import { isSameMonth, isSameDay, addDays } from 'date-fns';
 import { format } from 'date-fns';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import withReactContent from 'sweetalert2-react-content';
-import { RecoilRoot, useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { idState, jsonState, toogleState } from 'src/store/store';
 
 interface CProps {
@@ -264,7 +264,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
             );
           }
         } else if (toggleState == 'AMOUNT') {
-          if (cellObject.quantity == 'OVEREATING') {
+          if (cellObject.quantity == 'LIGHT') {
             //- amount 1
             days.push(
               <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
@@ -272,7 +272,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/amount1.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
             );
-          } else if (cellObject.quantity == 'LIGHT') {
+          } else if (cellObject.quantity == 'FITNESS') {
             //- amount 2
             days.push(
               <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
@@ -280,8 +280,8 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/amount2.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
             );
-          } else if (cellObject.quantity == 'FITNESS') {
-            // cellObject.type == "FITNESS" //- amount 3
+          } else if (cellObject.quantity == 'OVEREATING') {
+            //- amount 3
             days.push(
               <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>

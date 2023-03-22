@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
+import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 function UnderNav() {
   const router = useRouter();
+  const [isLogin, setIsLogin] = useState<boolean>();
+  useEffect(() => {
+    if (localStorage.getItem('logintoken') == null) {
+      setIsLogin(false);
+    } else {
+      setIsLogin(true);
+    }
+  }, [isLogin]);
 
-  // 추후 변경 가능성 O
   const onHome = () => {
     router.push({
       pathname: '/Home',
@@ -14,7 +22,7 @@ function UnderNav() {
 
   const onMylog = () => {
     if (localStorage.getItem('logintoken') == null) {
-      alert('로그인 머저 해라');
+      Swal.fire({ icon: 'error', title: 'Login, please', confirmButtonColor: '#5cc189' });
     } else {
       router.push({
         pathname: '/Mylog',
@@ -24,7 +32,7 @@ function UnderNav() {
 
   const onCalendar = () => {
     if (localStorage.getItem('logintoken') == null) {
-      alert('로그인 머저 해라');
+      Swal.fire({ icon: 'error', title: 'Login, please', confirmButtonColor: '#5cc189' });
     } else {
       router.push({
         pathname: '/Mycalendar',
@@ -35,10 +43,9 @@ function UnderNav() {
   const onLog = () => {
     if (localStorage.getItem('logintoken') != null) {
       localStorage.removeItem('logintoken');
-      router.push('/');
-      return <></>;
+      setIsLogin(false);
     } else {
-      return <></>;
+      router.push('/Login');
     }
   };
 
@@ -65,13 +72,21 @@ function UnderNav() {
           </StyledImgBox>
           <StyledText>Calendar</StyledText>
         </StyledIcon>
-
-        <StyledIcon>
-          <StyledImgBox>
-            <Image src={'/logout.png'} alt={'LOGOUT'} width={25} height={25} onClick={onLog} />
-          </StyledImgBox>
-          <StyledText>Logout</StyledText>
-        </StyledIcon>
+        {isLogin ? (
+          <StyledIcon>
+            <StyledImgBox>
+              <Image src={'/logout.png'} alt={'LOGOUT'} width={25} height={25} onClick={onLog} />
+            </StyledImgBox>
+            <StyledText>Logout</StyledText>
+          </StyledIcon>
+        ) : (
+          <StyledIcon>
+            <StyledImgBox>
+              <Image src={'/login.png'} alt={'LOGIN'} width={25} height={25} onClick={onLog} />
+            </StyledImgBox>
+            <StyledText>Login</StyledText>
+          </StyledIcon>
+        )}
       </UnderNavBox>
     </StyledNav>
   );
