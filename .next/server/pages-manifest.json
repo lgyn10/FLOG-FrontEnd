@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Mycalendar": "pages/Mycalendar.js",
+  "/Prolog": "pages/Prolog.js",
   "/": "pages/index.js",
-  "/Prolog": "pages/Prolog.js"
+  "/Mycalendar": "pages/Mycalendar.js"
 }
