@@ -60,8 +60,8 @@ function login() {
           <StyledForm onSubmit={onSubmit}>
             <StyledCover>
               <StyledInputWrapper>
-                <StyledInput type='text' placeholder='아이디' onChange={onChangeId} minLength={6} maxLength={20} required />
-                <StyledInput type='password' placeholder='비밀번호' onChange={onChangePw} minLength={8} required />
+                <StyledInput type='text' placeholder='id' onChange={onChangeId} minLength={6} maxLength={20} required />
+                <StyledInput type='password' placeholder='password' onChange={onChangePw} minLength={8} required />
               </StyledInputWrapper>
               {/* 메인페이지 이동*/}
               <StyledLoginBtn type='submit'>Login</StyledLoginBtn>

@@ -37,7 +37,6 @@ function Mycalendar() {
       <MyPageBox>
         <StyledButton onClick={onClick}>{globalToogle}</StyledButton>
         <Calendar />
-        <IsLoginBox>현재 로그인 여부: {isLogin}</IsLoginBox>
         <UnderNav />
       </MyPageBox>
     </>
