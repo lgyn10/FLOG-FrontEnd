@@ -18,6 +18,7 @@ function Home() {
         {/* FLOG 소개 */}
         <StyledArticle>
           <StyledTitle>WHAT IS FLOG?</StyledTitle>
+          <TitleExplain>FLOG is a compound word of food and log, which means to record what you eat every day.</TitleExplain>
           <TestImage src={'/FoodLog.jpeg'} alt={'foodlog'} />
           <StyledP>For your Health</StyledP>
           <StyledP>Record your daily Food Routine!</StyledP>
@@ -32,7 +33,7 @@ function Home() {
             <StyledTitle>Well-being Food</StyledTitle>
           </StyledBox>
           <Link href='https://www.healthline.com/nutrition/50-super-healthy-foods'>
-            <StyledImage src={'/Good food.jpeg'} alt={'foodlog'} />
+            <TestImage src={'/Good food.jpeg'} alt={'foodlog'} />
           </Link>
 
           <StyledP>Fresh ingredients</StyledP>
@@ -79,17 +80,21 @@ function Home() {
 }
 
 export default Home;
+const TitleExplain = styled.div`
+  margin-top: 1rem;
+  text-align: center;
+`;
 
 const TestImage = styled.img`
   margin: 2rem;
   display: flex;
   width: 100%;
   height: 100%;
-  max-width: 20rem;
+  max-width: 17rem;
   max-height: 12rem;
   align-items: center;
   justify-content: center;
-  border-radius: 5%;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
@@ -111,16 +116,6 @@ const StyledTitle = styled.p`
   font-weight: 550;
 `;
 
-const StyledImage = styled.img`
-  margin: 3rem 0;
-  max-width: 25rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const StyledP = styled.p`
   margin: 1rem;
   gap: 2rem;
@@ -137,7 +132,6 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
 `;
 
 const StyledSrc = styled.div`

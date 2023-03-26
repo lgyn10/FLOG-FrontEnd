@@ -241,7 +241,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           if (cellObject.type == 'HEALTH') {
             //- type 1
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/type1.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -249,7 +249,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           } else if (cellObject.type == 'BALANCE') {
             //- type 2
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/type2.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -257,7 +257,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           } else if (cellObject.type == 'INSTANT') {
             // cellObject.type == "INSTANT" //- type 3
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/type3.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -267,7 +267,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           if (cellObject.quantity == 'LIGHT') {
             //- amount 1
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/amount1.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -275,7 +275,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           } else if (cellObject.quantity == 'FITNESS') {
             //- amount 2
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/amount2.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -283,7 +283,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
           } else if (cellObject.quantity == 'OVEREATING') {
             //- amount 3
             days.push(
-              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+              <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
                 <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
                 <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/amount3.png'} alt={'test'} width={30} height={30} onClick={onClick} />
               </StyledDay>
@@ -293,7 +293,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
       } else {
         // cellObject의 값이 없다면, 기본값 로직
         days.push(
-          <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`} key={day}>
+          <StyledDay className={`col cell ${!isSameMonth(day, monthStart) ? 'disabled' : isSameDay(day, selectedDate) ? 'selected' : format(currentMonth, 'M') !== format(day, 'M') ? 'notvalid' : 'valid'}`}>
             <p className={format(currentMonth, 'M') !== format(day, 'M') ? 'text not-valid' : ''}>{formattedDate}</p>
             <StyledImg className={`Img ${!isSameMonth(day, monthStart) ? 'none' : ''}`} src={'/CalendarPic/default.png'} alt={'test'} width={30} height={30} onClick={onClick} />
           </StyledDay>
@@ -301,7 +301,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
       }
       day = addDays(day, 1);
     }
-    rows.push(<StyledRow key={day}>{days}</StyledRow>);
+    rows.push(<StyledRow>{days}</StyledRow>);
 
     days = [];
   }
@@ -314,13 +314,16 @@ export default RenderCells;
 // image div
 const StyledImg = styled.img`
   &:hover {
-    background-color: red;
+    background-color: #5cc189;
+    opacity: 0.3;
+    border-radius: 3px;
     cursor: pointer;
+    transition: all 0.2s;
   }
   &.none {
     opacity: 0;
     pointer-events: none;
-    background-color: red;
+    background-color: #5cc189;
   }
 `;
 

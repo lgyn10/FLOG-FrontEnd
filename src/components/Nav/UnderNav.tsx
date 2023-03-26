@@ -44,6 +44,7 @@ function UnderNav() {
     if (localStorage.getItem('logintoken') != null) {
       localStorage.removeItem('logintoken');
       setIsLogin(false);
+      router.push('/Home');
     } else {
       router.push('/Login');
     }
