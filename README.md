@@ -1,7 +1,8 @@
 # FLOG - GDSC-Solution-Challenge-2023
 
 <img width="1405" alt="KakaoTalk_Photo_2023-03-27-11-12-56" src="https://user-images.githubusercontent.com/72643542/227824500-19acf1a9-7288-4946-ba4e-9e03a5d8dbf1.png">
-### Team members
+
+###Team members
 
 | Frontend     | Backend     |
 | ------------ | ----------- |
