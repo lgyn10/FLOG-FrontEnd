@@ -26,7 +26,7 @@ const StyledNav = styled.nav`
 
 const StyledLogo = styled(Link)`
   display: flex;
-  padding: 0.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.7rem;
   cursor: pointer;
   transition: all 0.5s ease;
 
