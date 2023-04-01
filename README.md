@@ -1,9 +1,13 @@
 # FLOG
 
 <img width="1405" alt="KakaoTalk_Photo_2023-03-27-11-12-56" src="https://user-images.githubusercontent.com/72643542/227824500-19acf1a9-7288-4946-ba4e-9e03a5d8dbf1.png">
+
 ###### Our previous service was named BodyLog, but it has now been changed to FLOG.
+
 ###### Flog is a compound word of food and log, which means to record what you eat every day.
+
 ###### Our service users are those who want to keep a record of their eating habits.
+
 ###### We planned it for users to record their eating habits and reflect on their life through records to take care of their health.
 
 ## Our Sustainable Development Goals
