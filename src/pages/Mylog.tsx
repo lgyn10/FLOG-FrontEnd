@@ -24,10 +24,7 @@ function Mylog() {
         const currentMonth = new Date().getMonth() + 1;
         const filterResponse: ObjectEx[] = response.data as ObjectEx[];
         const filterArr = filterResponse.filter((eachData) => {
-          return (
-            new Date(eachData.selectedDate as string).getMonth() + 1 ===
-            currentMonth
-          );
+          return new Date(eachData.selectedDate as string).getMonth() + 1 === currentMonth;
         });
         console.log(filterArr);
         if (filterResponse.length > 0) {
