@@ -62,7 +62,7 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
       console.log(selectedAmount);
     };
     getJson();
-  }, [selectedType, selectedAmount]);
+  }, [selectedType, selectedAmount, globalJson]);
 
   const onClickTypeHealth = () => {
     typeValue = 'HEALTH';
@@ -192,7 +192,6 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
                 title: 'change saved!!',
                 confirmButtonColor: '#5cc189',
               }).then(() => {
-                resetToogle();
                 window.location.pathname = '/Mycalendar';
               });
             } else {
@@ -226,7 +225,6 @@ function RenderCells({ currentMonth, selectedDate, onDateClick }: CProps) {
                 title: 'saved!',
                 confirmButtonColor: '#5cc189',
               }).then(() => {
-                resetToogle();
                 window.location.pathname = '/Mycalendar';
               });
             }

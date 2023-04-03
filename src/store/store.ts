@@ -10,7 +10,7 @@ type ObjectEx = {
 
 type IdState = string | null;
 type MemberIdState = string | null;
-type ToogleState = string | null;
+type ToogleState = 'TYPE' | 'AMOUNT' | null;
 type JsonState = Array<ObjectEx> | null;
 type LoginState = boolean | null;
 
@@ -30,7 +30,7 @@ export const memberIdState = atom<MemberIdState>({
 
 export const toogleState = atom<ToogleState>({
   key: 'toogleState',
-  default: 'TYPE',
+  default: null,
   effects_UNSTABLE: [persistAtom],
 });
 
