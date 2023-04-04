@@ -26,7 +26,10 @@ function Mycalendar() {
     <>
       <Nav />
       <MyPageBox>
-        <StyledButton onClick={onClick}>{globalToogle === 'AMOUNT' ? 'AMOUNT' : 'TYPE'}</StyledButton>
+        <StyledButton onClick={onClick}>
+          {globalToogle === 'AMOUNT' ? 'AMOUNT' : 'TYPE'}
+          <StyledSpan> | REFRESH</StyledSpan>
+        </StyledButton>
         <Calendar />
         <UnderNav />
       </MyPageBox>
@@ -40,6 +43,7 @@ const StyledButton = styled.button`
   text-align: center;
   border: 1px solid #efefef;
   padding: 0.1rem;
+  padding-top: 0.2rem;
   margin: 0.5rem;
   border-radius: 20px;
   color: #4e4e4e;
@@ -54,4 +58,8 @@ const MyPageBox = styled.div`
   padding-top: 8vh;
   height: 100%;
   width: 100%;
+`;
+const StyledSpan = styled.span`
+  color: #939393;
+  font-size: 0.7rem;
 `;

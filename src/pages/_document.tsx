@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 function Document() {
   return (
-    <Html lang='ko'>
+    <Html lang='en'>
       <Head />
       <body>
         <Main />
